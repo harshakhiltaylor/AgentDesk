@@ -1,0 +1,18 @@
+app:
+  name: AgentDesk
+  version: "2.0.0"
+
+stack:
+  orchestration: langgraph
+  llm_provider:  groq
+  llm_model:     llama-3.3-70b-versatile
+  observability: langfuse
+
+tools:
+  failure_rate: 0.08
+  min_latency_ms: 50
+  max_latency_ms: 300
+
+flask:
+  host: "0.0.0.0"
+  port: 5001

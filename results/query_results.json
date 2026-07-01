@@ -1,0 +1,76 @@
+{
+  "generated_at": "2024-03-23",
+  "note": "Sample outputs from 5 test scenarios. Run 'python main.py --scenario N' for live results.",
+  "scenarios": [
+    {
+      "id": 1,
+      "customer": "CUST-001 (Alice Johnson, StartupCo, Starter)",
+      "query": "How do I enable dark mode in my account?",
+      "plan": ["FeatureAgent", "EscalationAgent"],
+      "complexity": "low",
+      "escalated": false,
+      "conflicts": [],
+      "response_summary": "Dark mode is available on all plans including Starter. Enable it via Settings → Appearance → Theme → Dark. No upgrade required.",
+      "token_estimate": { "prompt": 180, "response": 95, "total": 275 }
+    },
+    {
+      "id": 2,
+      "customer": "CUST-001 (Alice Johnson, StartupCo, Starter)",
+      "query": "I'm on the Starter plan but I need API access for my automation workflow.",
+      "plan": ["AccountAgent", "FeatureAgent", "EscalationAgent"],
+      "complexity": "medium",
+      "escalated": false,
+      "conflicts": [],
+      "response_summary": "API access is not included in the Starter plan. It requires the Pro plan ($299/month) which includes 1,000 API calls/month, advanced analytics, webhooks, and priority support.",
+      "token_estimate": { "prompt": 420, "response": 185, "total": 605 }
+    },
+    {
+      "id": 3,
+      "customer": "CUST-002 (Bob Martinez, TechFirm Inc., Pro)",
+      "query": "Your docs say unlimited API calls on Pro but I'm rate-limited after 1000/month.",
+      "plan": ["AccountAgent", "FeatureAgent", "ContractAgent", "EscalationAgent"],
+      "complexity": "high",
+      "escalated": false,
+      "conflicts": [
+        {
+          "source_a": "marketing_documentation",
+          "source_b": "feature_matrix_database",
+          "description": "Marketing docs claimed 'unlimited API calls' for Pro. Actual limit is 1,000/month.",
+          "resolution": "Feature matrix (live system data) is authoritative. Documentation is outdated/incorrect."
+        }
+      ],
+      "response_summary": "Confirmed conflict: marketing documentation incorrectly stated unlimited API calls for Pro. The actual contractual limit is 1,000 calls/month. Enterprise plan offers truly unlimited access. We apologize for the confusion in our documentation.",
+      "token_estimate": { "prompt": 680, "response": 240, "total": 920 }
+    },
+    {
+      "id": 4,
+      "customer": "CUST-003 (Carol Smith, Enterprise Corp, Enterprise)",
+      "query": "Waiting 10 days on critical issue, 24h SLA contract, $500/day loss. Escalate immediately.",
+      "plan": ["AccountAgent", "ContractAgent", "EscalationAgent"],
+      "complexity": "high",
+      "escalated": true,
+      "escalation_ticket": { "priority": "P1", "team": "Customer Success" },
+      "conflicts": [],
+      "response_summary": "SLA violation confirmed. Contract guarantees 4-hour response (Enterprise plan). 10 days elapsed = 236 hours, exceeding SLA by 232 hours. Escalation ticket created (P1). Customer Success team notified. Service credit of 10% MRR per day will be applied per contract terms.",
+      "token_estimate": { "prompt": 750, "response": 280, "total": 1030 }
+    },
+    {
+      "id": 5,
+      "customer": "CUST-004 (David Lee, NewCo, Starter)",
+      "query": "We have 15 users but plan shows only 10 seats. Help with licensing.",
+      "plan": ["AccountAgent", "FeatureAgent", "EscalationAgent"],
+      "complexity": "medium",
+      "escalated": false,
+      "conflicts": [],
+      "response_summary": "Account shows 15 users against a 10-seat Starter plan — 5-seat overage detected. Options: (1) Upgrade to Pro (up to 50 seats, $299/month) — recommended. (2) Reduce active users to 10. An onboarding specialist can assist with the migration and user setup.",
+      "token_estimate": { "prompt": 510, "response": 200, "total": 710 }
+    }
+  ],
+  "summary": {
+    "total_scenarios": 5,
+    "escalations": 1,
+    "conflicts_detected": 1,
+    "avg_agents_per_query": 3.0,
+    "complexity_distribution": { "low": 1, "medium": 2, "high": 2 }
+  }
+}
