@@ -1,4 +1,4 @@
-# AgentDesk (Agent Days)
+# AgentDesk
 ### Multi-Agent Customer Support Intelligence System
 
 **Author**: Harsh Tailor  
