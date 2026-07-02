@@ -1,0 +1,31 @@
+services:
+  # ── Backend Web Service (Flask API) ───────────────────
+  - type: web
+    name: agentdesk-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PORT
+        value: 5001
+      - key: GROQ_API_KEY
+        sync: false # User enters this key in Render dashboard
+      - key: LANGFUSE_PUBLIC_KEY
+        sync: false
+      - key: LANGFUSE_SECRET_KEY
+        sync: false
+      - key: LANGFUSE_HOST
+        value: "https://cloud.langfuse.com"
+
+  # ── Frontend Static Site (React + Vite) ───────────────
+  - type: web
+    name: agentdesk-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    publishDir: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: agentdesk-backend
+          type: web
+          property: host

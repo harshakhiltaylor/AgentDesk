@@ -44,6 +44,7 @@ export default function ResultsPanel({ data, elapsed }: ResultsPanelProps) {
             borderRadius: 14,
             background: bg ?? 'var(--bg-surface)',
             border: `1px solid ${bg ? 'transparent' : 'var(--border-subtle)'}`,
+            borderLeft: `4px solid ${color ?? 'var(--accent)'}`,
             padding: '14px 16px',
             display: 'flex', flexDirection: 'column', gap: 8,
           }}>
@@ -67,7 +68,9 @@ export default function ResultsPanel({ data, elapsed }: ResultsPanelProps) {
       {/* ── Investigation Plan ───────────────────────────── */}
       <div style={{
         borderRadius: 16, background: 'var(--bg-surface)',
-        border: '1px solid var(--border-subtle)', padding: '18px 20px',
+        border: '1px solid var(--border-subtle)',
+        borderLeft: '4px solid var(--accent)',
+        padding: '18px 20px',
       }}>
         <SectionLabel Icon={GitFork} text="Investigation Plan" />
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginTop: 12 }}>
