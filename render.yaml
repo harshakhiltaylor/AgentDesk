@@ -18,9 +18,8 @@ services:
         value: "https://cloud.langfuse.com"
 
   # ── Frontend Static Site (React + Vite) ───────────────
-  - type: web
+  - type: static
     name: agentdesk-frontend
-    env: static
     buildCommand: cd frontend && npm install && npm run build
     publishDir: frontend/dist
     envVars:
