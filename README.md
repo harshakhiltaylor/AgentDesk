@@ -88,6 +88,6 @@ This ensures the agent workflows can be audited, debugged, and optimized continu
 ## Tech Stack
 * **LLM Backbone**: LLaMA-3.3-70B-Versatile (via Groq)
 * **Agent Framework**: LangGraph
-* **Web Services**: Flask (Backend API), Streamlit (Interactive Frontend)
+* **Web Services**: Flask (Backend API), React (Interactive Frontend)
 * **Observability**: Langfuse
 * **Testing**: Pytest
