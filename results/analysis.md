@@ -2,7 +2,7 @@
 
 ## What We Built
 
-AgentDesk is a 5-agent multi-agent customer support intelligence system for TechCorp SaaS.
+AgentDesk is a 5-agent multi-agent customer support intelligence system for AgentDesk SaaS.
 
 ### Architecture Summary
 

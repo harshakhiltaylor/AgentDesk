@@ -9,7 +9,7 @@ from memory.shared_context import SharedContext
 from tools.contract_tools import ContractTools
 from monitoring.tracing_utils import log_finding, log_decision
 
-SYSTEM_PROMPT = """You are the Contract Agent for TechCorp's support system.
+SYSTEM_PROMPT = """You are the Contract Agent for AgentDesk's support system.
 Review contract terms and determine if any violations have occurred.
 
 Given contract data and the customer's issue:

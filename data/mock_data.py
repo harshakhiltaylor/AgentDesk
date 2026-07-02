@@ -1,7 +1,7 @@
 """
 AgentDesk Mock Dataset
 ----------------------
-Realistic mock data for TechCorp SaaS platform.
+Realistic mock data for AgentDesk SaaS platform.
 """
 
 CUSTOMERS = {
@@ -91,7 +91,7 @@ FEATURE_DOCS = {
     },
     "api_access": {
         "name": "API Access",
-        "description": "Programmatic access to TechCorp via REST API.",
+        "description": "Programmatic access to AgentDesk via REST API.",
         "setup": "Generate an API key in Settings -> Developer -> API Keys.",
         "plans": ["pro", "enterprise"],
         "note": "Marketing docs incorrectly stated 'unlimited' for Pro. Actual limit is 1,000 calls/month on Pro. Enterprise is truly unlimited.",

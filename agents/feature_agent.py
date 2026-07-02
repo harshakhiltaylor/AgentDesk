@@ -9,7 +9,7 @@ from memory.shared_context import SharedContext
 from tools.feature_tools import FeatureTools
 from monitoring.tracing_utils import log_finding
 
-SYSTEM_PROMPT = """You are the Feature Agent for TechCorp's support system.
+SYSTEM_PROMPT = """You are the Feature Agent for AgentDesk's support system.
 Investigate feature availability and provide accurate documentation.
 
 Given feature data and the customer's plan:

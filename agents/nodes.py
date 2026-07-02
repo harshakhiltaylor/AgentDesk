@@ -108,7 +108,7 @@ def _done_agents(state: SupportState) -> list:
 # NODE 1 — ORCHESTRATOR  (the dynamic router — runs multiple times)
 # ─────────────────────────────────────────────────────────────
 
-ROUTER_SYSTEM = """You are the Orchestrator for TechCorp SaaS customer support intelligence system.
+ROUTER_SYSTEM = """You are the Orchestrator for AgentDesk SaaS customer support intelligence system.
 
 You are called MULTIPLE TIMES during one investigation.
 Each time, you see the customer query AND all findings gathered so far.
@@ -238,7 +238,7 @@ def orchestrator_node(state: SupportState) -> dict:
 # NODE 2 — ACCOUNT
 # ─────────────────────────────────────────────────────────────
 
-ACCOUNT_SYSTEM = """You are the Account Agent for TechCorp SaaS customer support.
+ACCOUNT_SYSTEM = """You are the Account Agent for AgentDesk SaaS customer support.
 You have been given REAL data retrieved from the customer database.
 Use ONLY this data — do not invent anything.
 
@@ -335,7 +335,7 @@ def account_node(state: SupportState) -> dict:
 # NODE 3 — FEATURE
 # ─────────────────────────────────────────────────────────────
 
-FEATURE_SYSTEM = """You are the Feature Agent for TechCorp SaaS customer support.
+FEATURE_SYSTEM = """You are the Feature Agent for AgentDesk SaaS customer support.
 You have been given REAL data from the feature database.
 Use ONLY this data — do not invent anything.
 
@@ -443,7 +443,7 @@ def feature_node(state: SupportState) -> dict:
 # NODE 4 — CONTRACT
 # ─────────────────────────────────────────────────────────────
 
-CONTRACT_SYSTEM = """You are the Contract Agent for TechCorp SaaS customer support.
+CONTRACT_SYSTEM = """You are the Contract Agent for AgentDesk SaaS customer support.
 You have been given REAL contract data from the contract database.
 Use ONLY this data — do not invent anything.
 
@@ -547,7 +547,7 @@ def contract_node(state: SupportState) -> dict:
 # NODE 5 — ESCALATION
 # ─────────────────────────────────────────────────────────────
 
-ESCALATION_SYSTEM = """You are the Escalation Agent for TechCorp SaaS customer support.
+ESCALATION_SYSTEM = """You are the Escalation Agent for AgentDesk SaaS customer support.
 Review all prior agent findings and make the FINAL escalation decision.
 
 ESCALATION TRIGGERS:
@@ -650,7 +650,7 @@ def escalation_node(state: SupportState) -> dict:
 # NODE 6 — SYNTHESIS
 # ─────────────────────────────────────────────────────────────
 
-SYNTHESIS_SYSTEM = """You are writing the final reply to a customer support query for TechCorp SaaS.
+SYNTHESIS_SYSTEM = """You are writing the final reply to a customer support query for AgentDesk SaaS.
 
 You have verified findings from multiple specialist agents.
 Write a response that:

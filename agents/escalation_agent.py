@@ -9,7 +9,7 @@ from memory.shared_context import SharedContext
 from tools.escalation_tools import EscalationTools
 from monitoring.tracing_utils import log_finding, log_escalation, log_decision
 
-SYSTEM_PROMPT = """You are the Escalation Agent for TechCorp's support system.
+SYSTEM_PROMPT = """You are the Escalation Agent for AgentDesk's support system.
 Make the final escalation decision with clear reasoning.
 
 Review all prior agent findings and determine:

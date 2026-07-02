@@ -29,7 +29,7 @@ logger = logging.getLogger("agentdesk.orchestrator")
 # PROMPTS
 # ─────────────────────────────────────────────────────────────
 
-PLAN_SYSTEM = """You are the Orchestrator for TechCorp's multi-agent customer support system.
+PLAN_SYSTEM = """You are the Orchestrator for AgentDesk's multi-agent customer support system.
 Your ONLY job right now is to analyze the customer query and produce an investigation plan.
 
 Available agents:
