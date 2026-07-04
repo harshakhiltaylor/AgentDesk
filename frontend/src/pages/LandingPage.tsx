@@ -21,7 +21,7 @@ export default function LandingPage() {
   const handleScroll = (id: string) => {
     const el = document.getElementById(id)
     if (el) {
-      el.scrollMarginTop = 80 // offset for navbar
+      el.style.scrollMarginTop = '80px' // offset for navbar
       el.scrollIntoView({ behavior: 'smooth' })
     }
   }
