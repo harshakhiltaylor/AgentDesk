@@ -90,4 +90,32 @@ This ensures the agent workflows can be audited, debugged, and optimized continu
 * **Agent Framework**: LangGraph
 * **Web Services**: Flask (Backend API), React (Interactive Frontend)
 * **Observability**: Langfuse
-* **Testing**: Pytest
+* **Testing**: Python `unittest` framework
+
+---
+
+## Testing & Evaluation Suite
+
+AgentDesk features an automated **Integration Regression Testing Harness** located in [tests/test_scenarios.py].
+
+### 1. Robust 10-Scenario Dataset
+Tests are driven by a production-style golden dataset in [query_results.json](results/query_results.json), containing **10 highly challenging test cases** targeting:
+*   **Simple Configuration Scenarios**: Dark mode parameters.
+*   **SLA breaches**: Latency calculations (e.g. 10-day outage credits against daily MRR constraints).
+*   **Overage restrictions**: Overage seat counting (15 used seats vs 10 seat capacity bounds).
+*   **Billing Security**: Action routing blocks for suspended billing accounts.
+*   **Database Exceptions**: Graceful handling of unknown/empty database profiles.
+
+### 2. Dynamic Isolated Execution
+Rather than running in a single fragile thread, the suite dynamically binds each scenario as an **independent test case** on startup. If a single scenario fails or encounters rate limits, the remaining 9 cases run completely, presenting a comprehensive evaluation report.
+
+### 3. API Resilience & Backoff
+To handle cloud provider rate limits (such as Groq's daily token limits), the test suite incorporates **exponential backoff retry mechanisms**. If a `429 RateLimitError` is caught, the harness waits and retries (increasing pauses from 6s to 20s+) before registering a failure.
+
+### 4. Running the Tests
+To run the evaluation suite locally:
+```bash
+python3 -m unittest tests/test_scenarios.py
+```
+
+---
